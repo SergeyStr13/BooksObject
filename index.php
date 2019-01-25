@@ -1,6 +1,6 @@
 <?php
 define('CORE_INDEX', 1);
-	$view = 'user/userItem.php';
+	$view = 'user/userItems.php';
 	require 'action.php';
 ?>
 

@@ -15,7 +15,7 @@ class User {
 	}
 
 	public function getItemsUsers() {
-		echo 'ghbdtn';
+		echo 'Здесь будет список пользователей';
 
 	}
 
