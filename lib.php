@@ -1,7 +1,8 @@
 <?php
 
 class Db {
-	function connect() {
+
+	protected function connect() {
 		try {
 			$user = 'root';
 			$pass = '';
@@ -9,7 +10,6 @@ class Db {
 				PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 				PDO::MYSQL_ATTR_INIT_COMMAND => 'set names utf8'
 			]);
-
 			return $db;
 		} catch (PDOException $ex) {
 			echo $ex->getMessage();
