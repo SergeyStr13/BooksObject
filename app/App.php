@@ -38,7 +38,7 @@ class App {
 			'/user/update' => [UserController::class, 'update'],
 			'/user/delete' => [UserController::class, 'delete'],
 
-			'/books' => [BookController::class, 'books'],
+			'/book/books' => [BookController::class, 'books'],
 		]);
 		//разобраться
 		if (self::$instance === null) {

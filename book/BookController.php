@@ -11,8 +11,7 @@ class BookController extends \app\Controller {
 
 	public function books() {
 		$items = Book::getBooks();
-		var_dump($items);
-
+		$this->render('books', compact('items'));
 	}
 
 	public function getBookById() {

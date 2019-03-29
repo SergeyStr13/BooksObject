@@ -1,5 +1,5 @@
 <?php
-defined('CORE_INDEX') or die('restricted access');
+//defined('CORE_INDEX') or die('restricted access');
 
 ?>
 <h1>Книжный фонд</h1>
