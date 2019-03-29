@@ -1,19 +1,27 @@
 <?php
 namespace app;
 
+use book\BookController;
 use user\UserController;
 
 class App {
 
+	/** @var Request $request */
 	public $request;
 
-	/**
-	 * @var Database $db
-	 */
+	/** @var Database $db */
 	public $db;
+
+	/** @var string $uri */
 	public $uri;
+
+	/** @var Router $router */
 	private $router;
+
+	/** @var string $path */
 	private $path;
+
+	/** @var static $instance */
 	private static $instance;
 
 	public function __construct() {
@@ -23,12 +31,16 @@ class App {
 		$this->request = new Request();
 		$this->uri = '/'.($this->request->get('YPATH') ?? ''); // todo: переименовать YPATH во что-то более подходящее
 		$this->db = new Database(['user' => 'root', 'dbname' => 'booksphp']);
+
 		$this->router = new Router([
 			'/' => [UserController::class, 'users'],
 			'/user/add' => [UserController::class, 'add'],
 			'/user/update' => [UserController::class, 'update'],
-			'/user/delete' => [UserController::class, 'delete']
+			'/user/delete' => [UserController::class, 'delete'],
+
+			'/books' => [BookController::class, 'books'],
 		]);
+		//разобраться
 		if (self::$instance === null) {
 			self::$instance = $this;
 		}
